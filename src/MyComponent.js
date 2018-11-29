@@ -24,7 +24,7 @@ class MyComponent extends Component {
 	}
 
 	render() {
-		return this.props.children({ on: this.state.on, msg: this.state.msg, onChange: this.onChange });
+		return this.props.render({ on: this.state.on, msg: this.state.msg, onChange: this.onChange });
 	}
 }
 

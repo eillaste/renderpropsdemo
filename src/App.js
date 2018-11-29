@@ -7,20 +7,24 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<MyComponent msg={'Render Props'}>
-					{({ on, msg, onChange }) =>
-						on ? (
-							<div>
-								<h1>{msg}</h1>
-								<button onClick={onChange}>close me</button>
-							</div>
-						) : (
-							<button onClick={onChange}>open me</button>
-						)}
-				</MyComponent>
+				<MyComponent
+					msg={'Render Props'}
+					render={({ on, msg, onChange }) => (
+						<div>
+							{on ? (
+								<div>
+									<h1>{msg}</h1>
+								</div>
+							) : (
+								<div>0</div>
+							)}
+
+							<button onClick={onChange} />
+						</div>
+					)}
+				/>
 			</div>
 		);
 	}
 }
-
 export default App;
